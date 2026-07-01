@@ -4,20 +4,19 @@ function buypass() {
   new PaymentRequest(
     [
       {
-        supportedMethods: location.origin + "/pay",
+        supportedMethods: location.origin + "/payment-manifest.json",
         data: {
           url: document.querySelector("input").value
-        }
-      }
+        },
+      },
     ],
     {
       total: {
         label: "_",
         amount: {
-          value: "1",
-          currency: "USD"
-        }
-      }
+          value: "1", currency: "USD"
+        },
+      },
     }
   ).show();
 }
